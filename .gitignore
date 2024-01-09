@@ -1,3 +1,9 @@
+# Data
+server/files/*.json
+
+# Vscode
+.vscode/launch.json
+
 # Logs
 logs
 *.log

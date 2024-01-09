@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "af064bc9-6e18-4b77-b3fa-54c6df82f108",
+		"name": "mangareader",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10563877"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"https://xccsdfefrgrxcsc.vdsdfgfdfdfd/manga-222222\",\r\n    \"id\" : \"222222\",\r\n    \"name\" : \"222222 222222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/:id",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/:id/chapter/:chapter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"https://xccsdfefrgrxcsc.vdsdfgfdfdfd/manga-222222\",\r\n    \"id\" : \"222222\",\r\n    \"name\" : \"222222 222222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/:id/chapter/:chapter",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						":id",
+						"chapter",
+						":chapter"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "chapter",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/:id/page/:page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"https://xccsdfefrgrxcsc.vdsdfgfdfdfd/manga-212121\",\r\n    \"id\" : \"212121\",\r\n    \"name\" : \"manga1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/:id/page/:page",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						":id",
+						"page",
+						":page"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/discover/animesama",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://s22.xccsdfefrgrxcsc.vdsdfgfdfdfd\",\r\n    \"name\": \"toto\",\r\n    \"headers\" : {\r\n        \"Referer\": \"https://s22.xccsdfefrgrxcsc.vdsdfgfdfdfd/\",\r\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/discover/animesama",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"discover",
+						"animesama"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/discover/manganato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://xccsdfefrgrxcsc.vdsdfgfdfdfd/manga-222222\",\r\n    \"id\": \"222222\",\r\n    \"name\": \"222222 222222 222222\",\r\n    \"headers\" : {\r\n        \"Referer\": \"https://xccsdfefrgrxcsc.vdsdfgfdfdfd/\",\r\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/discover/manganato",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"discover",
+						"manganato"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

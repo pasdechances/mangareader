@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    <div id="nav">
+      <div>
+        <h1>Lulu la flemme</h1>
+      </div>
+      <div>
+        <label for="mangaList">Select a manga:</label>
+        <select id="mangaList" name="mangaList"></select>
+        <button id="validMangaList" name="validMangaList" type="button">Choisir</select>
+      </div>
+      <div>
+        Page : <input id='pge' value="0">
+        <button id="goto" name="goto" type="button">Go to</select>
+      </div>
+    </div>
+    <div id="imagesContainer"></div>  
+    <div id="scroller">
+        <div>
+          <button id="minSc" disabled="true"> - </button>
+          <span id="valueSc">3</span>
+          <button id="plusSc" disabled="true"> + </button>
+        </div>
+        <div>
+          <button id="startSc" >Start</button>
+          <button id="stopSc" disabled="true">Stop</button>  
+        </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+  manque la recherche de nouveau manga
+ -->
