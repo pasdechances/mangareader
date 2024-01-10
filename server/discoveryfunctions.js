@@ -62,7 +62,11 @@ const {
       for (let i = 0; i < chapters.length; i++) {
         let chapterUrl = `${url}${chapters[i]}`;
         let chapterHtml = await getContent(chapterUrl);
-        let imgUrls = extractUrls(chapterHtml, idManga);
+        let imgUrls = extractUrls(chapterHtml, idManga).sort((a,b)=>{
+          const numA = parseInt(a.match(/\/(\d+).jpg/)[1], 10);
+          const numB = parseInt(b.match(/\/(\d+).jpg/)[1], 10);
+          return numA - numB;
+        });;
 
         imgUrls.forEach((element, index) => {
           obj.push({
