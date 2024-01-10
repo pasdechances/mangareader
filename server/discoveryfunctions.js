@@ -45,7 +45,11 @@ const {
       const mangaUrl = `${url}/s1/scans/${idManga}`;
       const html = await getContent(mangaUrl);
       const urls = extractUrls(html, idManga);
-      const chapters = urls.sort((a, b) => extractPageNumberAnimesama(a) - extractPageNumberAnimesama(b));
+      const chapters = urls.sort((a, b) => {
+        const numA = parseInt(a.match(/\/(\d+)\//)[1], 10);
+        const numB = parseInt(b.match(/\/(\d+)\//)[1], 10);
+        return numA - numB;
+      });
       let z = 0;
       let obj = [];
       
@@ -59,7 +63,7 @@ const {
         let chapterUrl = `${url}${chapters[i]}`;
         let chapterHtml = await getContent(chapterUrl);
         let imgUrls = extractUrls(chapterHtml, idManga);
-        
+
         imgUrls.forEach((element, index) => {
           obj.push({
             chapter: i,
@@ -78,8 +82,8 @@ const {
     }
   }
   
-  function extractPageNumberAnimesama(url) {
-    const matches = url.match(/\/(\d+)\/$/);
+  function extractPageNumber(url, pregMatch) {
+    const matches = url.match(pregMatch);
     return matches ? parseInt(matches[1], 10) : 0;
   }
   
