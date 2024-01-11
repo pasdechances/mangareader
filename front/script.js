@@ -1,6 +1,8 @@
 const imagesContainer = document.getElementById('imagesContainer');
 const mangaListElement = document.getElementById('mangaList');
 const validMangaList = document.getElementById('validMangaList');
+const currentChapter = document.getElementById('currentChapter');
+const totalPages = document.getElementById('totalPages');
 const plusSc = document.getElementById('plusSc');
 const minSc = document.getElementById('minSc');
 const valueSc = document.getElementById('valueSc');
@@ -85,7 +87,10 @@ async function loadFirstImage(id, page = 0) {
         window.removeEventListener('scroll', handleScroll);
     }
     window.addEventListener('scroll', () => handleScroll(mangaListElement.value));
-    
+
+    getTotalPage();
+    getCurrentChapter();
+
     try {
         if ( 0 <= page && page < mangaData.length ) {
             await getImg(id, page);
@@ -145,16 +150,29 @@ function isTop() {
 
 async function handleScroll(id) {
     let pages = anlayseExistingPage()
-    
-    if (isBottom() && pages.max < mangaData.length) {
-        await loadNextImage(id, pages.max+1);
-    }
-    
-    if (isTop() && pages.min > 0) {
-        await loadPreviousImage(id, pages.min-1, false);
-        
+    if (pages.min > 0|| pages.max < mangaData.length) {   
+        if (isBottom()) {
+            await loadNextImage(id, pages.max + 1);
+        } else if (isTop()) {
+            await loadPreviousImage(id, pages.min - 1, false);
+        }
+
+        getTotalPage();
+        getCurrentChapter();
     }
 }
+
+function getTotalPage(){
+    totalPages.textContent = mangaData.length;
+}
+
+function getCurrentChapter(){
+    let ccpr = mangaData.find((el) => el.page == pageInput.value);
+     if(ccpr != undefined){
+        currentChapter.textContent = ccpr.chapter + ", page : " + ccpr.chapterPage
+     }
+}
+
 
 function anlayseExistingPage(){
     const images = document.querySelectorAll('#imagesContainer img');
