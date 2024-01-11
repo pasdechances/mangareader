@@ -16,8 +16,11 @@ img {
   align-items: center;
 }
 
-#loader{
+#oroboros{
   margin-top: 200px;
+}
+
+.hide{
   display: none;
 }
 

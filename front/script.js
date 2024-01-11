@@ -3,7 +3,7 @@ const mangaListElement = document.getElementById('mangaList');
 const validMangaList = document.getElementById('validMangaList');
 const currentChapter = document.getElementById('currentChapter');
 const totalPages = document.getElementById('totalPages');
-const loader = document.getElementById('loader');
+const oroboros = document.getElementById('oroboros');
 const plusSc = document.getElementById('plusSc');
 const minSc = document.getElementById('minSc');
 const valueSc = document.getElementById('valueSc');
@@ -47,9 +47,9 @@ async function getDictionnary() {
 
 async function getImg(id, page, nextTo = true) {
     try {
-        loaderToggle(true);
+        loaderToggle();
         const response = await fetch(`${baseUrl}/${id}/page/${page}`);
-        loaderToggle(false);
+        loaderToggle();
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
@@ -176,12 +176,8 @@ function getCurrentChapter(){
      }
 }
 
-function loaderToggle(display){
-    if (display) {
-        loader.style.display = "block";
-    } else {
-        loader.style.display = "none";
-    }
+function loaderToggle(){
+    oroboros.classList.toggle('hide');
 }
 
 function anlayseExistingPage(){
@@ -218,6 +214,8 @@ init();
 validMangaList.addEventListener('click', () => {
     imagesContainer.innerHTML = '';
     loadFirstImage(mangaListElement.value)
+        
+    
 });
 
 goto.addEventListener('click', () => {
