@@ -3,6 +3,7 @@ const mangaListElement = document.getElementById('mangaList');
 const validMangaList = document.getElementById('validMangaList');
 const currentChapter = document.getElementById('currentChapter');
 const totalPages = document.getElementById('totalPages');
+const loader = document.getElementById('loader');
 const plusSc = document.getElementById('plusSc');
 const minSc = document.getElementById('minSc');
 const valueSc = document.getElementById('valueSc');
@@ -46,7 +47,9 @@ async function getDictionnary() {
 
 async function getImg(id, page, nextTo = true) {
     try {
+        loaderToggle(true);
         const response = await fetch(`${baseUrl}/${id}/page/${page}`);
+        loaderToggle(false);
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
@@ -173,6 +176,13 @@ function getCurrentChapter(){
      }
 }
 
+function loaderToggle(display){
+    if (display) {
+        loader.style.display = "block";
+    } else {
+        loader.style.display = "none";
+    }
+}
 
 function anlayseExistingPage(){
     const images = document.querySelectorAll('#imagesContainer img');
