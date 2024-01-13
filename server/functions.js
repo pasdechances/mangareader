@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 
 function write(filename, data){
     try {    
-        fs.writeFileSync("./server/files/" + filename + ".json", JSON.stringify(data,null,1));    
+        fs.writeFileSync(__dirname + "./server/files/" + filename + ".json", JSON.stringify(data,null,1));    
         console.log('data save');
     } catch (error) {
         console.error("Une erreur est survenue lors de l'ecriture du fichier:", error.message);
@@ -14,7 +14,7 @@ function write(filename, data){
 // Fonction pour lire les URLs depuis un fichier
 function read(filename) {
     try {
-        const content = fs.readFileSync("./server/files/" + filename + ".json");
+        const content = fs.readFileSync(__dirname + "./server/files/" + filename + ".json");
         return JSON.parse(content);
     } catch (error) {
         console.error('Erreur lors de la lecture du fichier:', error.message);
