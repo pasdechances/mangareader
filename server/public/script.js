@@ -11,7 +11,7 @@ const startSc = document.getElementById('startSc');
 const stopSc = document.getElementById('stopSc');
 const pageInput = document.getElementById('pge');
 const goto = document.getElementById('goto');
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3000/api";
 const imagesRemaning = 3;
 
 let mangaData = [];
@@ -35,7 +35,7 @@ async function updatePageNumber(page) {
 
 async function getDictionnary() {
     try {
-        const response = await fetch(`${baseUrl}/`);
+        const response = await fetch(`${baseUrl}/dictionnary`);
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }

@@ -12,6 +12,7 @@ const port = global.config.port;
 app.use(cors(global.config.cors));
 app.use(bodyParser.json());
 app.use(bodyParser.json({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 app.listen(port, () => {
