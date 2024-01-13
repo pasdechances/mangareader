@@ -24,7 +24,7 @@
 			"response": []
 		},
 		{
-			"name": "/:id",
+			"name": "/manga/:id",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -59,7 +59,7 @@
 			"response": []
 		},
 		{
-			"name": "/:id/chapter/:chapter",
+			"name": "/manga/:id/chapter/:chapter",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -100,7 +100,7 @@
 			"response": []
 		},
 		{
-			"name": "/:id/page/:page",
+			"name": "/manga/:id/page/:page",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},

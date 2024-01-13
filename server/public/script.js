@@ -11,7 +11,7 @@ const startSc = document.getElementById('startSc');
 const stopSc = document.getElementById('stopSc');
 const pageInput = document.getElementById('pge');
 const goto = document.getElementById('goto');
-const baseUrl = "http://localhost:3000/api";
+const baseUrl = "http://localhost:8080/api";
 const imagesRemaning = 3;
 
 let mangaData = [];
@@ -48,7 +48,7 @@ async function getDictionnary() {
 async function getImg(id, page, nextTo = true) {
     try {
         loaderToggle();
-        const response = await fetch(`${baseUrl}/${id}/page/${page}`);
+        const response = await fetch(`${baseUrl}/manga/${id}/page/${page}`);
         loaderToggle();
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
@@ -71,7 +71,7 @@ async function getImg(id, page, nextTo = true) {
 
 async function getMangaInfos(id) {
     try {
-        const response = await fetch(`${baseUrl}/${id}`);
+        const response = await fetch(`${baseUrl}/manga/${id}`);
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
         }
