@@ -7,7 +7,7 @@
 
 # launch
 
-Open file lector.html in ./front with an browser.
+Open browser : http://localhost:3000/
 Enjoy.
 
 # API Docs
