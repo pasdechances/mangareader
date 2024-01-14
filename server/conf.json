@@ -1,5 +1,9 @@
 {
     "dictionnaryFileName" : "dictionnary",
     "port" : 8080,
-    "cors" : { "origin": "*" }
+    "cors" : {
+        "origine":"*",
+        "methods":"GET,HEAD,PUT,PATCH,POST,DELETE",
+        "optionsSuccessStatus":200
+    }
 }

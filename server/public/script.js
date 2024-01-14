@@ -11,7 +11,7 @@ const startSc = document.getElementById('startSc');
 const stopSc = document.getElementById('stopSc');
 const pageInput = document.getElementById('pge');
 const goto = document.getElementById('goto');
-const baseUrl = "http://localhost:8080/api";
+const baseUrl = "/api";
 const imagesRemaning = 3;
 
 let mangaData = [];
