@@ -5,7 +5,8 @@ const {
     getMangaDiscovery, 
     getPageContent, 
     getChapters,
-    discovertAnimesama } = require('./controllers');
+    discovertAnimesama,
+    discovertPhenixscans } = require('./controllers');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -18,5 +19,6 @@ router.get('/api/manga/:id/page/:page', getPageContent);
 
 router.post('/api/discover/manganato', discovertManganato);
 router.post('/api/discover/animesama', discovertAnimesama);
+router.post('/api/discover/phenixscans', discovertPhenixscans);
 
 module.exports = router;

@@ -2,12 +2,27 @@ const {
     read,
     downloadImage } = require('./functions');
 const { ManganatoDiscovery,
-    AnimesamaDiscovery } = require('./discoveryfunctions');
+    AnimesamaDiscovery,
+    PhenixscansDiscovery } = require('./discoveryfunctions');
 
 
 async function discovertManganato(req, res){
     try {
         await ManganatoDiscovery(
+            req.body.url,
+            req.body.id,
+            req.body.name,
+            req.body.headers
+        );
+        res.status(201).send('Discovery successful');
+    } catch (error) {
+        res.status(404).json({ error: error.message });
+    }
+}
+
+async function discovertPhenixscans(req, res){
+    try {
+        await PhenixscansDiscovery(
             req.body.url,
             req.body.id,
             req.body.name,
@@ -71,4 +86,5 @@ module.exports = {
     getPageContent,
     getChapters,
     discovertAnimesama,
+    discovertPhenixscans
 };

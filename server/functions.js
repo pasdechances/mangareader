@@ -53,7 +53,8 @@ function extractUrls(html, idManga) {
   
     $("a").each((index, element) => {
         const href = $(element).attr('href');
-        if (href) {
+        const rel = $(element).attr('rel');
+        if (href && ! rel) {
             if(href.includes(idManga)) urls.push(href);
         }
     });
