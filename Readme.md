@@ -13,3 +13,10 @@ Enjoy.
 # API Docs
 
 See mangareader.postman_collection.json
+
+
+Works on : 
+
+API manganato  mangatoday.fun
+API manganato  chapmanganato.to
+API animesama  s22.anime-sama.fr
