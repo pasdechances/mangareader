@@ -62,3 +62,10 @@ img {
   align-items: center;
   justify-content: center;
 }
+
+#player{
+  position: fixed;
+  width: 200px;
+  height: 220px;
+  bottom:0px;
+}

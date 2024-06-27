@@ -43,6 +43,7 @@ const {
     try {
       const idManga = encodeURIComponent(name);
       const mangaUrl = `${url}/s1/scans/${idManga}`;
+      console.log(mangaUrl)
       const html = await getContent(mangaUrl);
       const urls = extractUrls(html, idManga);
       const chapters = urls.sort((a, b) => {
